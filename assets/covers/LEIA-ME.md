@@ -24,6 +24,23 @@ capa: 'assets/covers/dino-runner.jpg'
 Pronto — aquele card passa a usar a imagem, e todos os outros continuam
 com a arte automática. Dá pra misturar os dois à vontade.
 
+> Se o arquivo não estiver aqui, estiver com outro nome ou não carregar, o card
+> **volta sozinho para a arte vetorial**. Nunca aparece imagem quebrada.
+
+## ⏳ Capas já apontadas, esperando o arquivo
+
+Estes quatro jogos já estão com o `capa` preenchido em `js/games.js`. Basta
+salvar as imagens aqui com **exatamente** estes nomes para elas entrarem no ar:
+
+```
+spider-man.jpg
+spider-man-vs-venom.jpg
+pac-man-neon.jpg
+pac-number.jpg
+```
+
+Enquanto os arquivos não chegam, esses cards seguem com a arte gerada.
+
 ## Dicas rápidas
 
 - Use **JPG** (foto/print) ou **WebP** (menor e mais moderno).

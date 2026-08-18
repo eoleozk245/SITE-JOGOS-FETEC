@@ -38,7 +38,8 @@ sozinho quando você edita algo.
 ├── js/
 │   ├── games.js          ⭐ os 14 jogos e as 6 categorias (é aqui que se edita)
 │   ├── covers.js         arte vetorial das capas
-│   ├── filters.js        busca instantânea + filtros por categoria
+│   ├── favoritos.js      lista de favoritos salva no navegador
+│   ├── filters.js        busca, filtros, favoritos, ordenação e estado na URL
 │   └── app.js            monta a página, navbar, scroll e efeitos
 ├── assets/
 │   ├── favicon.svg
@@ -46,7 +47,40 @@ sozinho quando você edita algo.
 └── README.md
 ```
 
-Os scripts são carregados nesta ordem: `games.js → covers.js → filters.js → app.js`.
+Os scripts são carregados nesta ordem:
+`games.js → favoritos.js → covers.js → filters.js → app.js`.
+
+---
+
+## 🕹️ Como usar a galeria
+
+| Recurso | Como funciona |
+|---|---|
+| **Busca** | Digite qualquer parte do nome, da descrição, da categoria ou de uma tag. Funciona com ou sem acento. Atalho: tecle <kbd>/</kbd> de qualquer lugar da página; <kbd>Esc</kbd> limpa. |
+| **Filtro por categoria** | Pelos chips acima da galeria ou clicando num card da seção *Categorias*. |
+| **Favoritos** | O coração no canto da capa salva o jogo. A lista fica **no seu próprio navegador** (nada é enviado para lugar nenhum) e sobrevive ao fechar a aba. O chip *Favoritos* mostra só os salvos. |
+| **Tags** | As tags dos cards são clicáveis e filtram a galeria por aquele estilo. |
+| **Ordenação** | *Por categoria* (padrão, agrupado) ou por nome, A–Z / Z–A (lista única). |
+| **Jogo aleatório** | Sorteia entre os jogos que estão visíveis no momento, rola até o card e deixa o botão *Jogar* pronto para o Enter. |
+
+### Links compartilháveis
+
+O que está filtrado aparece na URL, então dá para mandar um recorte da galeria
+para alguém:
+
+```
+index.html?cat=runner#jogos          só os corredores infinitos
+index.html?q=plataforma#jogos        busca por "plataforma"
+index.html?cat=favoritos#jogos       os favoritos de quem abrir (é uma lista local)
+index.html?ordem=az#jogos            os 14 jogos em ordem alfabética
+```
+
+O botão **voltar** do navegador desfaz um filtro por vez. Digitar na busca não
+enche o histórico: só a URL é atualizada.
+
+> Em `file://` (abrindo por dois cliques) alguns navegadores bloqueiam a escrita
+> da URL. Os filtros continuam funcionando normalmente — só o link deixa de
+> refletir o estado. Com Live Server ou no GitHub Pages funciona tudo.
 
 ---
 
@@ -77,6 +111,8 @@ Não precisa tocar no HTML.
 capa: 'assets/covers/meu-jogo.jpg'
 ```
 
+Se o arquivo não existir ou não carregar, o card volta sozinho para a arte
+vetorial — nenhum card fica com imagem quebrada.
 Detalhes e dicas de tamanho em `assets/covers/LEIA-ME.md`.
 
 ### Trocar as cores
@@ -101,7 +137,7 @@ Tudo mora no topo de `css/style.css`, no bloco `:root`. Trocar `--brand` e
 ## ⚡ Performance
 
 - Zero bibliotecas externas: só HTML, CSS e JavaScript puro.
-- Capas em SVG desenhado por código: não há download de imagem nenhum.
+- Capas em SVG desenhado por código: por padrão não há download de imagem nenhum.
 - `aspect-ratio` fixo nos cards → sem “pulo” de layout (CLS ≈ 0).
 - Partículas desligadas em telas pequenas e quando a aba fica em segundo plano.
 - Animações só em `opacity`, `transform` e `translate` (rodam na GPU).
@@ -115,6 +151,8 @@ Tudo mora no topo de `css/style.css`, no bloco `:root`. Trocar `--brand` e
 - Hierarquia de títulos correta (h1 → h2 → h3) e `lang="pt-BR"`.
 - Respeita `prefers-reduced-motion`: quem tem redução de movimento ativada vê o site parado.
 - Áreas de toque de no mínimo 44×44 px no celular.
+- Favoritar, ordenar e sortear anunciam o resultado por `aria-live`; o coração usa `aria-pressed`.
+- O atalho <kbd>/</kbd> é ignorado enquanto você digita em um campo.
 
 ## 📱 Responsividade
 

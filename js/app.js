@@ -28,6 +28,8 @@ const ICONES = {
   cube: '<path d="M12 2.6 20.5 7v10L12 21.4 3.5 17V7L12 2.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="none"/><path d="M3.5 7 12 11.6 20.5 7M12 11.6v9.8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="none"/>'
 };
 
+const FAV_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.6 4.8 13.4a4.7 4.7 0 0 1 6.6-6.7l.6.6.6-.6a4.7 4.7 0 0 1 6.6 6.7L12 20.6Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" fill="none"/></svg>';
+
 const PLAY_ICON = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4.8v14.4a1 1 0 0 0 1.53.85l11.2-7.2a1 1 0 0 0 0-1.7L8.53 3.95A1 1 0 0 0 7 4.8Z" fill="currentColor"/></svg>';
 
 /* =============================================================
@@ -69,17 +71,20 @@ function cardHTML(jogo, cat, numero, indiceNoGrupo = 0) {
   const busca = normalize(`${jogo.nome} ${jogo.descricao} ${cat.nome} ${jogo.tags.join(' ')}`);
 
   return `<article class="card" style="--accent:${cat.cor};--ci:${indiceNoGrupo}" data-cat="${escAttr(cat.id)}"
-      data-nome="${escAttr(jogo.nome)}" data-busca="${escAttr(busca)}">
+      data-id="${escAttr(jogo.id)}" data-nome="${escAttr(jogo.nome)}" data-busca="${escAttr(busca)}">
     <div class="card__media">
       ${media}
       <span class="card__badge"><i aria-hidden="true"></i>${escHtml(cat.nome)}</span>
       <span class="card__num" aria-hidden="true">${String(numero).padStart(2, '0')}</span>
+      <button type="button" class="card__fav" aria-pressed="false"
+              aria-label="Adicionar ${escAttr(jogo.nome)} aos favoritos">${FAV_ICON}</button>
     </div>
     <div class="card__body">
       <h3 class="card__title">${escHtml(jogo.nome)}</h3>
       <p class="card__desc">${escHtml(jogo.descricao)}</p>
       <div class="card__tags">
-        ${jogo.tags.map((t) => `<span class="card__tag">${escHtml(t)}</span>`).join('')}
+        ${jogo.tags.map((t) => `<button type="button" class="card__tag" data-tag="${escAttr(t)}"
+          aria-label="Filtrar jogos pela tag ${escAttr(t)}">${escHtml(t)}</button>`).join('')}
       </div>
     </div>
     <div class="card__foot">
@@ -107,6 +112,22 @@ function montarGaleria() {
       <div class="grid">${cards}</div>
     </section>`;
   }).join('');
+}
+
+/* Se uma capa de imagem não carregar (arquivo ainda não enviado, nome
+   trocado, link de fora fora do ar), o card volta para a arte vetorial
+   em vez de mostrar um ícone de imagem quebrada. */
+function protegerCapas() {
+  $$('.card__media img').forEach((img) => {
+    img.addEventListener('error', () => {
+      const card = img.closest('.card');
+      const jogo = JOGOS.find((j) => j.id === card?.dataset.id);
+      if (!jogo) return;
+
+      img.insertAdjacentHTML('afterend', coverFor(jogo, getCategoria(jogo.categoria).cor));
+      img.remove();
+    }, { once: true });
+  });
 }
 
 /* =============================================================
@@ -275,6 +296,7 @@ function init() {
   montarDefs();
   montarCategorias();
   montarGaleria();
+  protegerCapas();
   initNav();
   initFilters({ CATEGORIAS, JOGOS, normalize });
   initReveal();

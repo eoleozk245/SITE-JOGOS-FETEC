@@ -69,7 +69,7 @@ const JOGOS = [
       'Aventura inspirada no herói aracnídeo e em Miles Morales, focada em ação e agilidade.',
     link: 'https://ianfillype.github.io/SpiderMan-and-Miles-Morales-/',
     tags: ['Ação', 'Aventura', 'Herói'],
-    capa: null
+    capa: 'assets/covers/spider-man.jpg'
   },
   {
     id: 'spider-man-vs-venom',
@@ -79,7 +79,7 @@ const JOGOS = [
       'Jogo de combate ou plataforma que revive a clássica rivalidade entre o herói de Nova York e o simbionte Venom.',
     link: 'https://otaviohss2000-cmyk.github.io/Spider-Man-vs-Venom/',
     tags: ['Combate', 'Plataforma', 'Herói'],
-    capa: null
+    capa: 'assets/covers/spider-man-vs-venom.jpg'
   },
 
   /* ---------- Clássicos Reformulados e Arcade ---------- */
@@ -91,7 +91,7 @@ const JOGOS = [
       'O clássico jogo de comer pastilhas e fugir de fantasmas, mas com um visual moderno e brilhante em estilo neon.',
     link: 'https://yschavareto5-ctrl.github.io/estagioo/',
     tags: ['Arcade', 'Labirinto', 'Neon'],
-    capa: null
+    capa: 'assets/covers/pac-man-neon.jpg'
   },
   {
     id: 'pac-number',
@@ -101,7 +101,7 @@ const JOGOS = [
       'Uma variação criativa e matemática inspirada nas mecânicas de labirinto do Pac-Man original.',
     link: 'https://pedroschumann33-commits.github.io/fetec23/',
     tags: ['Arcade', 'Lógica', 'Labirinto'],
-    capa: null
+    capa: 'assets/covers/pac-number.jpg'
   },
   {
     id: 'bom-velhinho',
