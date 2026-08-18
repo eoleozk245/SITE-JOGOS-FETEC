@@ -137,7 +137,7 @@ Tudo mora no topo de `css/style.css`, no bloco `:root`. Trocar `--brand` e
 ## ⚡ Performance
 
 - Zero bibliotecas externas: só HTML, CSS e JavaScript puro.
-- Capas em SVG desenhado por código: por padrão não há download de imagem nenhum.
+- Seis capas usam print real (~35 KB cada); as outras oito são SVG desenhado por código, sem download nenhum.
 - `aspect-ratio` fixo nos cards → sem “pulo” de layout (CLS ≈ 0).
 - Partículas desligadas em telas pequenas e quando a aba fica em segundo plano.
 - Animações só em `opacity`, `transform` e `translate` (rodam na GPU).

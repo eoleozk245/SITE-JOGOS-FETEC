@@ -123,7 +123,7 @@ const JOGOS = [
       'Jogo de plataforma baseado em ritmo onde você deve saltar por obstáculos pontiagudos no tempo certo da música.',
     link: 'https://gabrieloolls.github.io/jogo/',
     tags: ['Ritmo', 'Plataforma', 'Reflexo'],
-    capa: null
+    capa: 'assets/covers/geometry-dash.jpg'
   },
   {
     id: 'bloco-sorridente',
