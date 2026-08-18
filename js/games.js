@@ -133,7 +133,7 @@ const JOGOS = [
       'Um remix personalizado inspirado nas mecânicas desafiadoras e no estilo visual de Geometry Dash.',
     link: 'https://muriloantonioalmeida12-bot.github.io/geometry-dash-remix/',
     tags: ['Remix', 'Plataforma', 'Desafio'],
-    capa: null
+    capa: 'assets/covers/bloco-sorridente.jpg'
   },
   {
     id: 'parkour-magico',
@@ -143,7 +143,7 @@ const JOGOS = [
       'Desafio de plataforma onde o objetivo é saltar entre obstáculos usando agilidade e elementos mágicos.',
     link: 'https://davilanche9-dotcom.github.io/Parkour-M-gico/',
     tags: ['Parkour', 'Plataforma', 'Magia'],
-    capa: null
+    capa: 'assets/covers/parkour-magico.png'
   },
 
   /* ---------- Corredores Infinitos e Fuga (Runner) ---------- */
@@ -155,7 +155,7 @@ const JOGOS = [
       'O famoso jogo do dinossauro do Google Chrome, onde você corre sem parar desviando de cactos e pterodáctilos.',
     link: 'https://kauangamer845-art.github.io/dino-runner/',
     tags: ['Runner', 'Infinito', 'Clássico'],
-    capa: null
+    capa: 'assets/covers/dino-runner.jpg'
   },
   {
     id: 'doggy-escape',
@@ -165,7 +165,7 @@ const JOGOS = [
       'Jogo casual de esquiva e velocidade focado na fuga de um cachorrinho simpático.',
     link: 'https://calopsitadomal20-hue.github.io/jogocachorrinho/',
     tags: ['Casual', 'Esquiva', 'Velocidade'],
-    capa: null
+    capa: 'assets/covers/doggy-escape.jpg'
   },
 
   /* ---------- Cooperativo e RPG ---------- */
@@ -177,7 +177,7 @@ const JOGOS = [
       'Jogo de quebra-cabeça e plataforma cooperativo baseado no clássico "Fireboy and Watergirl" (Foguinho e Aguinha).',
     link: 'https://waguinhodinosauro-tech.github.io/Foguinho-e-Aguinha/',
     tags: ['Cooperativo', 'Puzzle', 'Plataforma'],
-    capa: null
+    capa: 'assets/covers/templo-dos-elementos.webp'
   },
   {
     id: 'pokemon-firered',
@@ -187,7 +187,7 @@ const JOGOS = [
       'Adaptação ou emulação do clássico RPG de Game Boy Advance para capturar e batalhar com monstrinhos de bolso.',
     link: 'https://joaopedromunhoz010-ops.github.io/P-k-mon-FireRed-java-escola/',
     tags: ['RPG', 'Aventura', 'Retrô'],
-    capa: null
+    capa: 'assets/covers/pokemon-firered.jpg'
   },
 
   /* ---------- Criatividade e Esportes ---------- */
@@ -199,7 +199,7 @@ const JOGOS = [
       'Versão inspirada no famoso jogo de blocos voltada para exploração, sobrevivência ou construção livre.',
     link: 'https://eloh017.github.io/JOGO-MINECRAFT/',
     tags: ['Sandbox', 'Construção', 'Exploração'],
-    capa: null
+    capa: 'assets/covers/minecraft.jpg'
   },
   {
     id: 'rei-da-mesa',
@@ -209,7 +209,7 @@ const JOGOS = [
       'Simulador virtual de bilhar (sinuca) feito para testar sua mira, física e ângulos nas tacadas.',
     link: 'https://kallebrafael.github.io/JogoBilharETEC/',
     tags: ['Esporte', 'Física', 'Mira'],
-    capa: null
+    capa: 'assets/covers/rei-da-mesa.jpg'
   }
 ];
 

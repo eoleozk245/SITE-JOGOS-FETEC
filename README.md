@@ -130,14 +130,17 @@ Tudo mora no topo de `css/style.css`, no bloco `:root`. Trocar `--brand` e
 | Identidade | Gaming + tecnologia + UI premium, base azul/ciano |
 | Fundo | Gradientes radiais em camadas, aurora animada e partículas — nunca `#000` |
 | Tipografia | **Space Grotesk** (títulos) + **Inter** (texto) |
-| Cards | Glassmorphism, capa 16:10, hover com elevação, zoom e glow da categoria |
+| Cards | Glassmorphism, capa 16:10 (`object-fit: cover`), hover com elevação, zoom e glow da categoria |
 | Botão Jogar | Sempre azul→ciano (ação principal constante) e abre em nova aba |
 | Categorias | Acento próprio por categoria, usado só em detalhes — a identidade continua azul |
 
 ## ⚡ Performance
 
 - Zero bibliotecas externas: só HTML, CSS e JavaScript puro.
-- Seis capas usam print real (~35 KB cada); as outras oito são SVG desenhado por código, sem download nenhum.
+- Os 14 jogos usam print real (~800 KB no total), carregados com `loading="lazy"`:
+  só entram na rede quando o card chega perto da tela.
+- A arte vetorial de `covers.js` continua no projeto como **rede de segurança**:
+  se uma capa não carregar, o card cai nela em vez de mostrar imagem quebrada.
 - `aspect-ratio` fixo nos cards → sem “pulo” de layout (CLS ≈ 0).
 - Partículas desligadas em telas pequenas e quando a aba fica em segundo plano.
 - Animações só em `opacity`, `transform` e `translate` (rodam na GPU).

@@ -27,18 +27,21 @@ com a arte automática. Dá pra misturar os dois à vontade.
 > Se o arquivo não estiver aqui, estiver com outro nome ou não carregar, o card
 > **volta sozinho para a arte vetorial**. Nunca aparece imagem quebrada.
 
-## 🖼️ Capas reais já em uso
+## 🖼️ Capas em uso
 
-Estes seis jogos usam print/arte real (os outros oito seguem com a arte
-vetorial gerada — dá para misturar à vontade):
+Os 14 jogos usam print real. O nome do arquivo é sempre o `id` do jogo:
 
 ```
-spider-man.jpg           spider-man-vs-venom.jpg   pac-man-neon.jpg
-pac-number.jpg           batalha-de-robos.jpg      geometry-dash.jpg
+spider-man.jpg            spider-man-vs-venom.jpg   pac-man-neon.jpg
+pac-number.jpg            batalha-de-robos.jpg      geometry-dash.jpg
+bloco-sorridente.jpg      parkour-magico.png        dino-runner.jpg
+doggy-escape.jpg          templo-dos-elementos.webp pokemon-firered.jpg
+minecraft.jpg             rei-da-mesa.jpg
 ```
 
-Para trocar uma delas, basta substituir o arquivo mantendo o mesmo nome —
-não precisa mexer em `js/games.js`.
+Para trocar uma capa, substitua o arquivo mantendo o mesmo nome — não
+precisa mexer em `js/games.js`. Se mudar a extensão, aí sim ajuste o
+`capa:` daquele jogo.
 
 ## Dicas rápidas
 
