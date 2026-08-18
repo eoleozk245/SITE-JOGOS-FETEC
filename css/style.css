@@ -329,10 +329,14 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden; /* segura o glow do título dentro da seção */
   min-height: min(90svh, 820px);
   display: grid; place-items: center;
-  padding-block: clamp(56px, 11vw, 120px) clamp(60px, 12vw, 130px);
+  /* topo maior que a base de propósito: desce o conteúdo e o afasta da
+     navbar, em vez de deixá-lo começando colado no alto da página */
+  padding-block: clamp(92px, 13.5vw, 172px) clamp(48px, 10vw, 110px);
   text-align: center;
 }
-.hero__inner { display: grid; justify-items: center; gap: 26px; }
+/* o respiro entre os blocos acompanha a altura da tela: assim o conteúdo
+   desce sem afastar ainda mais as estatísticas da dobra em notebooks */
+.hero__inner { display: grid; justify-items: center; gap: clamp(16px, 2.6vh, 26px); }
 
 .hero__eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
@@ -855,7 +859,7 @@ a { color: inherit; text-decoration: none; }
   :root { --nav-h: 66px; }
   .brand__text { display: none; }
   .brand { min-width: 46px; justify-content: center; }
-  .hero { min-height: auto; padding-top: 44px; }
+  .hero { min-height: auto; padding-top: 64px; }
   .hero__title { font-size: clamp(2.4rem, 11vw, 3.4rem); }
   .hero__cta { width: 100%; flex-direction: column; }
   .hero__cta .btn { width: 100%; }
