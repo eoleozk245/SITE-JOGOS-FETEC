@@ -183,31 +183,42 @@ const MOTIVOS = {
       font-size="22" fill="#8fb6ff" fill-opacity=".5">+  −  ×  ÷</text>`,
     { glow: [400, 130] }),
 
-  /* ---------------- Bom Velhinho ---------------- */
-  'bom-velhinho': (id, a) => frame(id, a, `
-    <g stroke="#ffffff" stroke-opacity=".5" stroke-width="2.4" stroke-linecap="round">
-      ${[[92, 70, 15], [206, 128, 10], [548, 84, 14], [458, 52, 9], [596, 200, 11], [128, 214, 9]]
-      .map(([x, y, r]) => `<g transform="translate(${x} ${y})"><path d="M0-${r}V${r}M-${r} 0H${r}
-      M-${r * 0.7}-${r * 0.7}L${r * 0.7} ${r * 0.7}M${r * 0.7}-${r * 0.7}L-${r * 0.7} ${r * 0.7}"/></g>`).join('')}
+  /* ---------------- Batalha de Robôs ---------------- */
+  'batalha-de-robos': (id, a) => frame(id, a, `
+    <g fill="#ffffff" fill-opacity=".08">
+      ${[[74, 62], [556, 76], [612, 250], [46, 268]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="5"/>`).join('')}
     </g>
-    <path d="M0 344c70-22 128-6 190-16s96-30 158-24 108 34 172 24 84-16 120-8v80H0Z" fill="#dbeafe" fill-opacity=".16"/>
-    <g transform="translate(298 226)">
-      <path d="M-96 36Q-84-56 6-84 96-112 142-64 96-40 56 4 22 40-2 40Z" fill="#ff4d6d"/>
-      <path d="M-96 36Q-84-56 6-84 32-92 54-88-6-58-40 36Z" fill="#ff8095" fill-opacity=".55"/>
-      <rect x="-112" y="30" width="150" height="30" rx="15" fill="#f8fbff"/>
-      <rect x="-112" y="30" width="150" height="13" rx="6.5" fill="#ffffff" fill-opacity=".55"/>
-      <circle cx="150" cy="-66" r="23" fill="#f8fbff"/>
-      <circle cx="144" cy="-72" r="8" fill="#ffffff" fill-opacity=".6"/>
+    <path d="M0 336h640" stroke="#dbeafe" stroke-opacity=".22" stroke-width="3"/>
+
+    <!-- robô da esquerda, com o canhão apontado -->
+    <g transform="translate(196 250)">
+      <rect x="-30" y="-96" width="60" height="50" rx="12" fill="#f8fbff" fill-opacity=".92"/>
+      <rect x="-20" y="-80" width="40" height="15" rx="7.5" fill="#22d3ee"/>
+      <path d="M0-96v-20" stroke="#f8fbff" stroke-opacity=".7" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="0" cy="-122" r="7" fill="${a}"/>
+      <rect x="-44" y="-40" width="88" height="82" rx="14" fill="${a}" fill-opacity=".92"/>
+      <rect x="-18" y="-24" width="36" height="30" rx="8" fill="#081127" fill-opacity=".45"/>
+      <rect x="44" y="-22" width="56" height="26" rx="13" fill="#f8fbff" fill-opacity=".85"/>
+      <rect x="-32" y="42" width="26" height="44" rx="8" fill="#f8fbff" fill-opacity=".6"/>
+      <rect x="6" y="42" width="26" height="44" rx="8" fill="#f8fbff" fill-opacity=".6"/>
     </g>
-    <g transform="translate(140 302)">
-      <rect x="-42" y="-40" width="84" height="80" rx="8" fill="${a}" fill-opacity=".9"/>
-      <rect x="-8" y="-40" width="16" height="80" fill="#22d3ee"/>
-      <rect x="-42" y="-10" width="84" height="16" fill="#22d3ee"/>
+
+    <!-- robô da direita, espelhado -->
+    <g transform="translate(452 258) scale(-1 1)">
+      <rect x="-28" y="-88" width="56" height="46" rx="11" fill="#f8fbff" fill-opacity=".85"/>
+      <rect x="-19" y="-73" width="38" height="14" rx="7" fill="#ff4d6d"/>
+      <rect x="-41" y="-36" width="82" height="76" rx="13" fill="#3b82f6" fill-opacity=".9"/>
+      <rect x="-16" y="-21" width="32" height="27" rx="7" fill="#081127" fill-opacity=".45"/>
+      <rect x="41" y="-18" width="50" height="24" rx="12" fill="#f8fbff" fill-opacity=".8"/>
+      <rect x="-30" y="40" width="24" height="40" rx="7" fill="#f8fbff" fill-opacity=".55"/>
+      <rect x="5" y="40" width="24" height="40" rx="7" fill="#f8fbff" fill-opacity=".55"/>
     </g>
-    <g transform="translate(506 316)">
-      <rect x="-34" y="-32" width="68" height="64" rx="8" fill="#3b82f6" fill-opacity=".85"/>
-      <rect x="-6" y="-32" width="12" height="64" fill="#f8fbff" fill-opacity=".8"/>
-    </g>`, { glow: [330, 170] }),
+
+    <!-- disparo cruzando o centro -->
+    <path d="M324 214l-30 34h22l-14 30 34-38h-22l16-26Z" fill="#22d3ee"/>
+    <g stroke="#22d3ee" stroke-opacity=".55" stroke-width="4" stroke-linecap="round">
+      <path d="M300 240h-16M356 236h16M312 268l-12 10M350 208l12-10"/>
+    </g>`, { glow: [320, 190] }),
 
   /* ---------------- Geometry Dash ---------------- */
   'geometry-dash': (id, a) => frame(id, a, `

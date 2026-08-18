@@ -170,3 +170,7 @@ Tudo mora no topo de `css/style.css`, no bloco `:root`. Trocar `--brand` e
 Os 14 jogos, as 6 categorias, as descrições, os links e os dados do rodapé foram
 transcritos do documento oficial **“Arte Digital – site Jogos JavaScript”** e
 conferidos um a um.
+
+**Alteração posterior ao documento:** o jogo que constava como *Bom Velhinho*
+passou a se chamar **Batalha de Robôs** (id `batalha-de-robos`), com descrição,
+tags e capa novas. O link do aluno continua o mesmo.

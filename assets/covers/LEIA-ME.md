@@ -29,7 +29,7 @@ com a arte automática. Dá pra misturar os dois à vontade.
 
 ## ⏳ Capas já apontadas, esperando o arquivo
 
-Estes quatro jogos já estão com o `capa` preenchido em `js/games.js`. Basta
+Estes cinco jogos já estão com o `capa` preenchido em `js/games.js`. Basta
 salvar as imagens aqui com **exatamente** estes nomes para elas entrarem no ar:
 
 ```
@@ -37,6 +37,7 @@ spider-man.jpg
 spider-man-vs-venom.jpg
 pac-man-neon.jpg
 pac-number.jpg
+batalha-de-robos.jpg
 ```
 
 Enquanto os arquivos não chegam, esses cards seguem com a arte gerada.
@@ -52,7 +53,7 @@ Enquanto os arquivos não chegam, esses cards seguem com a arte gerada.
 
 ```
 spider-man              spider-man-vs-venom     pac-man-neon
-pac-number              bom-velhinho            geometry-dash
+pac-number              batalha-de-robos        geometry-dash
 bloco-sorridente        parkour-magico          dino-runner
 doggy-escape            templo-dos-elementos    pokemon-firered
 minecraft               rei-da-mesa

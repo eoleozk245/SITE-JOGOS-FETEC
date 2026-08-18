@@ -104,14 +104,14 @@ const JOGOS = [
     capa: 'assets/covers/pac-number.jpg'
   },
   {
-    id: 'bom-velhinho',
-    nome: 'Bom Velhinho',
+    id: 'batalha-de-robos',
+    nome: 'Batalha de Robôs',
     categoria: 'classicos-arcade',
     descricao:
-      'Uma coletânea ou jogo temático focado em fases divertidas comandadas pela figura do Papai Noel.',
+      'Duelo de robôs em fases de ação e plataforma, na linha dos clássicos de tiro e reflexo do fliperama.',
     link: 'https://joaofelipedeoliveira730-lab.github.io/GAMESDOVELHO/',
-    tags: ['Coletânea', 'Natal', 'Casual'],
-    capa: null
+    tags: ['Ação', 'Robôs', 'Retrô'],
+    capa: 'assets/covers/batalha-de-robos.jpg'
   },
 
   /* ---------- Ritmo, Plataforma e Reflexos ---------- */
